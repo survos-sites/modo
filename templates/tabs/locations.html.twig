@@ -1,0 +1,50 @@
+<h1>
+    Tab {{ t }}
+</h1>
+
+<div class="block">
+        This is the  {{ t }}  tab {{ _self }}
+        {% set store = t %}
+        {% set globals = {} %}
+
+        <twig:dexie
+                refreshEvent="tab-{{ t }}-show"
+                :store="store"
+                :globals="globals"
+                :filter="{}"
+                :caller="_self">
+
+            <twig:block name="title">
+                there are {{ rows|length }} rows
+            </twig:block>
+
+            <twig:block name="twig_template" id="hack_to_get_raw_data">
+                <h1>{{ storeName }}</h1> <!-- passed in from dexie -->
+                <div class="list">
+                    <ul>
+                    {% for row in rows|slice(0,3) %}
+                        <li>
+                            <a href="/pages/location/{{row.id}}" class="item-link">
+                                <div class="item-content">
+                                    <div class="item-inner
+                                    ">
+                                        <div class="item-title
+                                        ">
+                                           <b>{{ row.name|title }}</b>
+                                        </div>
+                                        <div class="item-after
+                                        ">
+                                            Number of Obras : {{ row.obraCount }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                there are {{ rows|length }} rows
+                <!-- hack_to_get_raw_data -->
+            </twig:block>
+        </twig:dexie>
+</div>

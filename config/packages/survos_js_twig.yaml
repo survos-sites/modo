@@ -1,0 +1,11 @@
+# Default configuration for extension with alias: "survos_js_twig"
+survos_js_twig:
+  debug: false
+  db: modo
+  version: 3
+  stores:
+    -
+      name: locs
+      schema: "++id,label"
+      url: /api/locs
+#      batch: 3
