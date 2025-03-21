@@ -2,10 +2,11 @@
 
 {% block body %}
 
-    <ul>
-        {% for loc in locs %}
-            <li>
-                {% set url = url('admin_detail', loc.rp) %}
+    <h1>{{ core|trans }}</h1>
+        <div class="grid">
+        {% for loc in items %}
+            <div>
+                {% set url = url('admin_detail', {core: core, id: loc.id}) %}
                 <div>
                     <a href="{{ url }}" target="_blank">
                         <img src="{{ qr_code_url(url) }}"/>
@@ -17,13 +18,16 @@
                             {{ loc.label }}
                         </a>
                     </b>
-                    <p>
-                        {{ loc.description|slice(0, 80) }}...
-                    </p>
+                    <code>{{ loc.code }}</code>
+                    <pre>{{ loc.info }}</pre>
                 </div>
-            </li>
+            </div>
+
+            {% if (loop.index % 3) == 0 %}
+                </div><div class="grid">
+            {% endif %}
         {% endfor %}
-    </ul>
+        </div>
 
 {% endblock %}
 
