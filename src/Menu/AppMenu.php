@@ -67,7 +67,8 @@ final class AppMenu implements KnpMenuHelperInterface
     {
         $menu = $event->getMenu();
         foreach ([
-                     'about' => 'tabler:info-circle',
+                     'info' => 'tabler:info-circle',
+                     'locations' => 'tabler:map',
                  ] as $route => $icon) {
             $this->add($menu, id: $route, route: 'app_page',
                 rp: ['page' => $route, 'type' => 'tab'], icon: $icon,
