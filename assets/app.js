@@ -36,8 +36,3 @@ var app = new Framework7({
     // routes: routes,
 });
 
-// either make these conditional or in the admin namespace
-import '@picocss/pico/css/pico.min.css';
-import '@picocss/pico';
-
-// Register service worker
