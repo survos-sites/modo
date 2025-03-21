@@ -6,7 +6,7 @@
 {#        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/survosapigrid/style.css') }}" ></link>#}
     {% endblock %}
     {% block javascripts %}
-    {{ importmap('admin') }}
+        {% block importmap %}{{ importmap('admin') }}{% endblock %}
     {% endblock %}
 </head>
 

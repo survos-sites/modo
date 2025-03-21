@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Loc;
 use App\Repository\LocRepository;
-use HttpRequest;
 use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,13 +23,22 @@ final class AdminController extends AbstractController
 
     }
 
-        #[Route('/browse/{_locale}', name: 'browse', methods: ['GET'])]
+    #[Route('/browse/{_locale}', name: 'browse', methods: ['GET'])]
     public function browse(Request $request,  LocRepository $locRepository): Response
     {
 
         return $this->render('admin/browse.html.twig', [
             'locs' => $locRepository->findBy(['locale' => $request->getLocale()]),
         ]);
+    }
+
+    #[Route('/{_locale}/detail/{locId}', name: 'detail', methods: ['GET'])]
+    #[Template('admin/detail.html.twig')]
+    public function detail(Request $request,  Loc $loc): array
+    {
+        return [
+            'loc' => $loc,
+        ];
     }
 
 }

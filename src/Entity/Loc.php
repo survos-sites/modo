@@ -14,7 +14,7 @@ use Survos\CoreBundle\Entity\RouteParametersTrait;
 class Loc implements \Stringable, RouteParametersInterface
 {
     use RouteParametersTrait;
-    const array UNIQUE_PARAMETERS=['artistId' => 'id'];
+    const array UNIQUE_PARAMETERS=['locId' => 'id'];
 
     #[ORM\Id]
     #[ORM\GeneratedValue]

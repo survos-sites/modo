@@ -1,0 +1,13 @@
+{% extends 'admin-base.html.twig' %}
+
+{% block body %}
+
+    <h1>
+        {{ loc.label }}
+    </h1>
+    <div>
+        {{ loc.description|markdown_to_html }}
+    </div>
+
+{% endblock %}
+
