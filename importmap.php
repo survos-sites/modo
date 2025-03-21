@@ -25,4 +25,71 @@ return [
     '@hotwired/turbo' => [
         'version' => '7.3.0',
     ],
+    '@survos-mobile/mobile' => [
+        'path' => './vendor/survos/fw-bundle/assets/src/controllers/mobile_controller.js',
+    ],
+    'twig' => [
+        'version' => '1.17.1',
+    ],
+    'locutus/php/strings/sprintf' => [
+        'version' => '2.0.32',
+    ],
+    'locutus/php/strings/vsprintf' => [
+        'version' => '2.0.32',
+    ],
+    'locutus/php/math/round' => [
+        'version' => '2.0.32',
+    ],
+    'locutus/php/math/max' => [
+        'version' => '2.0.32',
+    ],
+    'locutus/php/math/min' => [
+        'version' => '2.0.32',
+    ],
+    'locutus/php/strings/strip_tags' => [
+        'version' => '2.0.32',
+    ],
+    'locutus/php/datetime/strtotime' => [
+        'version' => '2.0.32',
+    ],
+    'locutus/php/datetime/date' => [
+        'version' => '2.0.32',
+    ],
+    'locutus/php/var/boolval' => [
+        'version' => '2.0.32',
+    ],
+    'dexie' => [
+        'version' => '4.0.11',
+    ],
+    'framework7' => [
+        'version' => '8.3.4',
+    ],
+    'dom7' => [
+        'version' => '4.0.6',
+    ],
+    'ssr-window' => [
+        'version' => '4.0.2',
+    ],
+    'path-to-regexp' => [
+        'version' => '6.3.0',
+    ],
+    'htm' => [
+        'version' => '3.1.1',
+    ],
+    'framework7/framework7-bundle' => [
+        'version' => '8.3.4',
+    ],
+    'framework7/framework7-bundle.min.css' => [
+        'version' => '8.3.4',
+        'type' => 'css',
+    ],
+    'stimulus-attributes' => [
+        'version' => '1.0.1',
+    ],
+    'escape-html' => [
+        'version' => '1.0.3',
+    ],
+    'fos-routing' => [
+        'version' => '0.0.6',
+    ],
 ];

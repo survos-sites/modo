@@ -8,3 +8,32 @@ import './bootstrap.js';
 import './styles/app.css';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+
+import 'framework7/framework7-bundle.min.css';
+
+var $ = Dom7;
+import Framework7 from 'framework7/framework7-bundle';
+
+// import './store.js';
+import Dexie from 'dexie';
+//var db = new Dexie('MyDatabase');
+
+
+import routes from "./routes.js";
+// Routing.setData(RoutingData);
+
+import {DbUtilities} from './js/lib/dixieDatabase.js';
+
+
+var app = new Framework7({
+    name: 'My App', // App name
+    theme: 'auto', // Automatic theme detection
+    el: '#app', // App root element
+
+    // App store
+    // store: store,
+    // App routes
+    // routes: routes,
+});
+
+// Register service worker
