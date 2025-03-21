@@ -4,6 +4,6 @@ composer install
 ./c d:f:load -n
 symfony server:start -d
 symfony open:local
-symfony open:local --path=/browse
+symfony open:local --path=/admin/browse/en
 
 ```

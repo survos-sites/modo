@@ -1,0 +1,18 @@
+<html>
+<head>
+    <meta title="{% block title "MODO: Museo Modo" %}">
+    {% block stylesheets %}
+        {#        <link rel="stylesheet" href="https://kit.fontawesome.com/821a06d4ef.css" crossorigin="anonymous">#}
+{#        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/survosapigrid/style.css') }}" ></link>#}
+    {% endblock %}
+    {% block javascripts %}
+    {{ importmap('admin') }}
+    {% endblock %}
+</head>
+
+
+<body data-turbo="false">
+{% block body '@overwrite the body' %}
+</body>
+</html>
+

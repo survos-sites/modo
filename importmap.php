@@ -16,17 +16,18 @@ return [
         'path' => './assets/app.js',
         'entrypoint' => true,
     ],
-    '@hotwired/stimulus' => [
-        'version' => '3.2.2',
+    'admin' => [
+        'path' => './assets/admin.js',
+        'entrypoint' => true,
     ],
     '@symfony/stimulus-bundle' => [
         'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
     ],
-    '@hotwired/turbo' => [
-        'version' => '7.3.0',
-    ],
     '@survos-mobile/mobile' => [
         'path' => './vendor/survos/fw-bundle/assets/src/controllers/mobile_controller.js',
+    ],
+    '@hotwired/stimulus' => [
+        'version' => '3.2.2',
     ],
     'twig' => [
         'version' => '1.17.1',
@@ -68,10 +69,10 @@ return [
         'version' => '4.0.6',
     ],
     'ssr-window' => [
-        'version' => '4.0.2',
+        'version' => '5.0.0',
     ],
     'path-to-regexp' => [
-        'version' => '6.3.0',
+        'version' => '8.2.0',
     ],
     'htm' => [
         'version' => '3.1.1',
@@ -91,5 +92,12 @@ return [
     ],
     'fos-routing' => [
         'version' => '0.0.6',
+    ],
+    '@picocss/pico' => [
+        'version' => '2.1.1',
+    ],
+    '@picocss/pico/css/pico.min.css' => [
+        'version' => '2.1.1',
+        'type' => 'css',
     ],
 ];

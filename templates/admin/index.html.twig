@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+
+    {% for locale in app.enabled_locales %}
+        <a href="{{ path('admin_browse', {_locale: locale}) }}">
+            {{ locale }}
+            {{ locale|language_name }}
+        </a>
+    {% endfor %}
+    {{ dump(locs) }}
+
+{% endblock %}

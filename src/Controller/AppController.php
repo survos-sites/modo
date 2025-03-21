@@ -22,15 +22,6 @@ final class AppController extends AbstractController
 
     }
 
-    #[Route('/browse', name: 'app_app')]
-    public function browse(LocRepository $locRepository): Response
-    {
-
-        return $this->render('app/index.html.twig', [
-            'locs' => $locRepository->findAll(),
-        ]);
-    }
-
     #[Route('/pages/{page}', name: 'app_page', priority: 400)]
     public function page(string $page): Response
     {

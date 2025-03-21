@@ -6,11 +6,16 @@ use ApiPlatform\Metadata\ApiResource;
 use App\Repository\LocRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Survos\CoreBundle\Entity\RouteParametersInterface;
+use Survos\CoreBundle\Entity\RouteParametersTrait;
 
 #[ORM\Entity(repositoryClass: LocRepository::class)]
 #[ApiResource]
-class Loc
+class Loc implements \Stringable, RouteParametersInterface
 {
+    use RouteParametersTrait;
+    const array UNIQUE_PARAMETERS=['artistId' => 'id'];
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -79,5 +84,10 @@ class Loc
         $this->orderIdx = $orderIdx;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return "LOC-" . $this->getId();
     }
 }

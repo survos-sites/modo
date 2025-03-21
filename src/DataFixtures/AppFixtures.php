@@ -5,12 +5,20 @@ namespace App\DataFixtures;
 use App\Entity\Loc;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Psr\Log\LoggerInterface;
 
 class AppFixtures extends Fixture
 {
+
+    public function __construct(
+        private LoggerInterface $logger,
+    )
+    {
+    }
+
     public function load(ObjectManager $manager): void
     {
-        foreach (['en','es'] as $locale) {
+        foreach (['en', 'es'] as $locale) {
             $fn = "data/modo.$locale.md";
             assert(file_exists($fn));
             $content = file_get_contents($fn);
@@ -26,13 +34,15 @@ class AppFixtures extends Fixture
                     'title' => $title,
                     'description' => substr($description, 0, 40),
                 ];
+                $loc = new Loc()
+                    ->setLocale($locale)
+                    ->setLabel($title)
+                    ->setDescription($description);
+                $manager->persist($loc);
+                $this->logger->info("Loading data from {$title}", $data[$idx][$locale]);
             }
-            $loc = new Loc()
-                ->setLocale($locale)
-                ->setLabel($title)
-                ->setDescription($description);
 
-            $manager->persist($loc);
+
         }
 
         $manager->flush();
