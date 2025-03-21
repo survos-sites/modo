@@ -1,13 +1,18 @@
 {% extends 'admin-base.html.twig' %}
 
+    {% block stylesheets %}
+
+{#        {{ parent() }}#}
+    {% endblock %}
+
 {% block body %}
 
     <h1>
         {{ item.label }}
     </h1>
-    <div>
+    <article>
         {{ item.description|markdown_to_html }}
-    </div>
+    </article>
 
 {% endblock %}
 
