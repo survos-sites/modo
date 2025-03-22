@@ -3,8 +3,10 @@
 namespace App\DataFixtures;
 
 use App\Entity\Loc;
+use App\Entity\Obj;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use League\Csv\Reader;
 use Psr\Log\LoggerInterface;
 
 class AppFixtures extends Fixture
@@ -18,6 +20,26 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
+
+        $csv = Reader::createFromPath('data/modo1.csv', 'r');
+        $csv->setHeaderOffset(0);
+
+        $header = $csv->getHeader(); //returns the CSV header record
+
+//returns all the records as
+        $records = $csv->getRecords(); // an Iterator object containing arrays
+//        $records = $csv->getRecordsAsObject(MyDTO::class); //an Iterator object containing MyDTO objects
+        foreach ($records as $record) {
+            $obj = new Obj()
+                ->setLocale('es')
+                ->setCode($record["ID Inventario1"])
+                ->setLabel($record["Nombre"])
+                ->setInfo($record["Ficha"])
+                ->setDescription($record["Descripción Formal"])
+            ;
+            $manager->persist($obj);
+        }
+
         foreach (['en', 'es'] as $locale) {
             $fn = "data/modo.$locale.md";
             assert(file_exists($fn));
@@ -44,6 +66,8 @@ class AppFixtures extends Fixture
 
 
         }
+
+
 
         $manager->flush();
     }
