@@ -35,4 +35,3 @@ var app = new Framework7({
     // App routes
     // routes: routes,
 });
-

@@ -5,7 +5,7 @@ survos_js_twig:
   version: 3
   stores:
     -
-      name: locs
+      name: locations
       schema: "++id,label"
       url: /api/locs
 #      batch: 3
