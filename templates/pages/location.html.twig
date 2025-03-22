@@ -1,0 +1,29 @@
+
+<twig:SurvosFw:Framework7Page
+ :caller="_self" >
+  <twig:block name="content">
+    This is in {{ _self }}
+    @todo: js-twig DETAIL for location
+
+    {% set store = 'locations' %}
+    {% set globals = {
+
+    } %}
+    <twig:dexie
+            refreshEvent="location.refresh"
+            :store="store"
+            :globals="globals"
+            :caller="_self">
+      <twig:block name="twig_template" id="hack_to_get_raw_data">
+        This is the detail page for some specific location ID {{ data.id }}
+        <div class="location-detail">
+            <h1><b>ID : {{data.id}}</b></h1>
+            <h1>{{ data.label|title }}</h1>
+            <p>Description: {{ data.description }}</p>
+        </div>
+        <!-- hack_to_get_raw_data -->
+      </twig:block>
+    </twig:dexie>
+  </twig:block>
+
+</twig:SurvosFw:Framework7Page>
