@@ -33,5 +33,16 @@ var app = new Framework7({
     // App store
     // store: store,
     // App routes
-    // routes: routes,
+    routes: [
+        {
+            path: '/pages/:page/:id',
+            url: './pages/{{page}}',
+            // componentUrl: './pages/obra',
+        },
+        {
+            path: '/pages/:page',
+            url: './pages/{{page}}',
+            // componentUrl: './pages/obra',
+        },
+    ],
 });
