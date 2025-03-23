@@ -1,9 +1,4 @@
-<h1>
-    Tab {{ t }}
-</h1>
-
 <div class="block">
-        This is the  {{ t }}  tab {{ _self }}
         {% set store = t %}
         {% set globals = {} %}
 
@@ -19,10 +14,9 @@
             </twig:block>
 
             <twig:block name="twig_template" id="hack_to_get_raw_data">
-                <h1>{{ storeName }}</h1> <!-- passed in from dexie -->
                 <div class="list">
                     <ul>
-                    {% for row in rows|slice(0,3) %}
+                    {% for row in rows %}
                         <li>
                             <a href="/pages/location/{{row.id}}" class="item-link">
                                 <div class="item-content">
@@ -34,7 +28,8 @@
                                         </div>
                                         <div class="item-after
                                         ">
-                                            Number of Obras : {{ row.obraCount }}
+                                            {{ random(2,9) }}
+{#                                            {{ row.obraCount|default(random(2,9)) }}#}
                                         </div>
                                     </div>
                                 </div>

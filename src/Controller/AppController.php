@@ -30,8 +30,14 @@ final class AppController extends AbstractController
         ]);
     }
 
+//    #[Route('/', name: '_browse', options: ['expose' => true], methods: ['GET'])]
+//    public function landing(Request $request): Response
+//    {
+//        dd("@todo: list of configs");
+//    }
+
     #[Route('/', name: 'app_index', options: ['expose' => true], methods: ['GET'])]
-    public function mobile(Request $request): Response
+    public function mobile(Request $request, string $configCode='modo'): Response
     {
 
         $templates = [];
