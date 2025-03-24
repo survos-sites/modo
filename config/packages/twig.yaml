@@ -2,6 +2,7 @@ twig:
     file_name_pattern: '*.twig'
     globals:
         app_name: 'El MODO'
+        app_logo: '/logo.webp'
 
 when@test:
     twig:
