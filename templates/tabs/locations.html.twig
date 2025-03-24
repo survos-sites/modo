@@ -20,6 +20,13 @@
                         <li>
                             <a href="/pages/location/{{row.id}}" class="item-link">
                                 <div class="item-content">
+                                    <div class="item-media">
+                                        {% if row.image %}
+                                            <img src="{{ row.image }}" alt="{{ row.label }}">
+                                        {% else %}
+                                            <img src="https://picsum.photos/id/{{row.id}}0/50" alt="{{ row.label }}" style="width: 50px;">
+                                        {% endif %}
+                                    </div>
                                     <div class="item-inner
                                     ">
                                         <div class="item-title
