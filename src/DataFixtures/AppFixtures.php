@@ -29,9 +29,9 @@ class AppFixtures extends Fixture
 //returns all the records as
         $records = $csv->getRecords(); // an Iterator object containing arrays
 //        $records = $csv->getRecordsAsObject(MyDTO::class); //an Iterator object containing MyDTO objects
-        foreach ($records as $record) {
+        foreach ($records as $idx => $record) {
             $obj = new Obj()
-                ->setLocale('es')
+                ->setLocale($idx % 2 ? 'es' : 'en')
                 ->setCode($record["ID Inventario1"])
                 ->setLabel($record["Nombre"])
                 ->setInfo($record["Ficha"])
