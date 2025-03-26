@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Repository\LocRepository;
 use Knp\Menu\FactoryInterface;
 use Survos\FwBundle\Event\KnpMenuEvent;
+use Survos\FwBundle\Service\FwService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,6 +18,7 @@ final class AppController extends AbstractController
     public function __construct(
         private EventDispatcherInterface $eventDispatcher,
         protected FactoryInterface $factory,
+        private FwService $fwService
     )
     {
 
@@ -70,9 +72,11 @@ final class AppController extends AbstractController
                 }
             }
         }
+        $config = $this->fwService->getConfigs()['modo'];
 //        dd($templates);
         return $this->render('@SurvosFw/start.html.twig', [
             'templates' => $templates,
+            'config' => $config,
             'playNow' => $request->get('playNow', true),
         ]);
     }

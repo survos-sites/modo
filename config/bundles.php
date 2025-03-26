@@ -27,4 +27,5 @@ return [
     Survos\DeploymentBundle\SurvosDeploymentBundle::class => ['all' => true],
     Inspector\Symfony\Bundle\InspectorBundle::class => ['all' => true],
     Endroid\QrCodeBundle\EndroidQrCodeBundle::class => ['all' => true],
+    Knp\DictionaryBundle\KnpDictionaryBundle::class => ['all' => true],
 ];
