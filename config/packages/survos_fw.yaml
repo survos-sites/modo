@@ -4,8 +4,6 @@ survos_fw:
   enabled: true
   projects:
 
-    # Prototype
-
     #this is only here for testing modo, it will move to fw / voxitour
     modo: # configuration code for database, etc.
       code: modo

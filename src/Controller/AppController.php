@@ -12,13 +12,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Routing\Attribute\Route;
+use Survos\FwBundle\Service\FwService;
 
 final class AppController extends AbstractController
 {
     public function __construct(
         private EventDispatcherInterface $eventDispatcher,
         protected FactoryInterface $factory,
-        private FwService $fwService
+        private FwService $fwService,
     )
     {
 
@@ -63,6 +64,7 @@ final class AppController extends AbstractController
                         'route' => $route,
                         'template' => $template,
                         'debug' => $request->get('debug', false),
+                        'config' => $this->fwService->getConfigs()[strtolower($configCode)],
                     ];
 //                    $templates[$route]  = $this->twig->render($template, $params);
                     $templates[$route] = $this->renderView($template, $params);
@@ -78,6 +80,7 @@ final class AppController extends AbstractController
             'templates' => $templates,
             'config' => $config,
             'playNow' => $request->get('playNow', true),
+            'config' => $this->fwService->getConfigs()[strtolower($configCode)],
         ]);
     }
 }

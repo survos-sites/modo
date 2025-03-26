@@ -18,8 +18,8 @@
                             {{ loc.label }}
                         </a>
                     </b>
-                    <code>{{ loc.code }}</code>
-                    <pre>{{ loc.info }}</pre>
+                    <code>{{ loc.code|default(loc.id) }}</code>
+                    <pre>{{ loc.info|default('') }}</pre>
                 </div>
             </div>
 
