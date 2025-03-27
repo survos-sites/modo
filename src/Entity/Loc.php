@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\LocRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -10,7 +12,12 @@ use Survos\CoreBundle\Entity\RouteParametersInterface;
 use Survos\CoreBundle\Entity\RouteParametersTrait;
 
 #[ORM\Entity(repositoryClass: LocRepository::class)]
-#[ApiResource]
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection(),
+    ]
+)]
 class Loc implements \Stringable, RouteParametersInterface
 {
     use RouteParametersTrait;

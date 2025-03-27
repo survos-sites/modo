@@ -1,12 +1,5 @@
 {
     "controllers": {
-        "@survos/fw-bundle": {
-            "mobile": {
-                "enabled": true,
-                "fetch": "lazy",
-                "autoimport": []
-            }
-        },
         "@survos/js-twig-bundle": {
             "dexie": {
                 "enabled": true,

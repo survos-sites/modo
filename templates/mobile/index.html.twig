@@ -1,0 +1,71 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <!-- App root element -->
+    <div id="app" class="framework7-root" {{ stimulus_controller('app') }}>
+        <!-- framework7 left panel overlay -->
+        <div class="panel panel-left">
+
+            <twig:mobile_menu
+                    :caller="_self"
+                    type="MOBILE_PAGE_MENU"
+            >
+            </twig:mobile_menu>
+        </div>
+
+        <div class="panel panel-right">
+            <!-- Right panel content should be a page structure -->
+            <div class="view view-init panel-view">
+                <div class="page">
+                    <div class="page-content">
+                        <p><a href="/settings/" class="link">Settings</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ block('main_app') }}
+        <!-- Your main view, should have "view-main" class -->
+    </div>
+{% endblock %}
+
+{% block main_app %}
+    {% set tabs = [
+        'info', 'obras', 'locations'
+    ] %}
+    <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="768" data-url="/">
+        <div class="page page-current">
+
+            <div class="navbar">
+                <div class="navbar-bg"></div>
+                <div class="navbar-inner">
+
+                    <div class="left">
+                        <a class="link icon-only panel-open ripple-inset" data-panel="left">
+                            <twig:ux:icon name="tabler:menu-2" />
+                        </a>
+                    </div>
+
+                    <div class="title">Navbar!</div>
+                </div>
+            </div>
+
+            <div class="toolbar tabbar tabbar-icons toolbar-bottom">
+                <div class="toolbar-inner">
+                    {% for t in tabs %}
+                        <a href="#tab-{{ t }}" class="tab-link {{ loop.first ? 'tab-active' }}">
+                        <span
+                                class="tabbar-label">{{ t|title }}</span></a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="tabs">
+                {% for t in tabs %}
+                    <div id="tab-{{ t }}" class="page-content tab {{ loop.first ? 'tab-active' }}">
+                        {{ include('tabs/%s.html.twig'|format(t), {t: t}) }}
+                        {#                    {{ include('tabs/obras.html.twig'|format(t), {t: t}) }}#}
+                    </div>
+                {% endfor %}
+            </div><-- tabs -->
+        </div><-- page page-current -->
+    </div> <!-- view-main -->
+{% endblock %}

@@ -1,30 +1,30 @@
-# Default configuration for extension with alias: "survos_fw"
-survos_fw:
-  theme: fw7
-  enabled: true
-  projects:
-
-    #this is only here for testing modo, it will move to fw / voxitour
-    modo: # configuration code for database, etc.
-      code: modo
-      logo: logo/modo.png
-      name: El Modo
-      tabs:
-        - info
-          # - share
-        # if data is set, composer req survos/js-twig-bundle
-        #      data: # must be json-ld
-
-        # indexDb database name
-      database: modo
-      stores:
-
-        # Prototype
-        - name: items
-          url: https://modo.survos.com/api/items
-          limit: 100
-
-      members:
-        # Prototype
-        - email: tacman@gmail.com
-          role: PROJECT_ADMIN
+## Default configuration for extension with alias: "survos_fw"
+#survos_fw:
+#  theme: fw7
+#  enabled: true
+#  projects:
+#
+#    #this is only here for testing modo, it will move to fw / voxitour
+#    modo: # configuration code for database, etc.
+#      code: modo
+#      logo: logo/modo.png
+#      name: El Modo
+#      tabs:
+#        - info
+#          # - share
+#        # if data is set, composer req survos/js-twig-bundle
+#        #      data: # must be json-ld
+#
+#        # indexDb database name
+#      database: modo
+#      stores:
+#
+#        # Prototype
+#        - name: items
+#          url: https://modo.survos.com/api/items
+#          limit: 100
+#
+#      members:
+#        # Prototype
+#        - email: tacman@gmail.com
+#          role: PROJECT_ADMIN

@@ -18,8 +18,6 @@ return [
     Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['dev' => true, 'test' => true],
     Symfony\UX\TwigComponent\TwigComponentBundle::class => ['all' => true],
     Survos\CoreBundle\SurvosCoreBundle::class => ['all' => true],
-    Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
-    Survos\FwBundle\SurvosFwBundle::class => ['all' => true],
     Symfony\UX\Icons\UXIconsBundle::class => ['all' => true],
     Survos\JsTwigBundle\SurvosJsTwigBundle::class => ['all' => true],
     FOS\JsRoutingBundle\FOSJsRoutingBundle::class => ['all' => true],

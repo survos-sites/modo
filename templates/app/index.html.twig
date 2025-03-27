@@ -1,71 +1,50 @@
-{% extends "base.html.twig" %}
-{% block body %}
-    <!-- App root element -->
-    <div id="app" class="framework7-root" {{ stimulus_controller('app') }}>
-        <!-- framework7 left panel overlay -->
-        <div class="panel panel-left">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Yui Demo</title>
+{#    <link rel="stylesheet" href="css/style.css?v=11">#}
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap);.container,body{align-items:center;display:flex}body,html{margin:0;padding:0}body{justify-content:center;background-color:#fff;font-family:Rubik,sans-serif}.qrcode{width:120px;margin-left:100px}.buttons{margin-right:100px}.container{width:100%;height:100vh;min-height:710px;justify-content:center}.link-button{display:flex;align-items:center;color:#fff;padding:10px 18px;border-radius:8px;margin:10px 0;text-decoration:none;transition:.2s;font-size:13px;height:20px}.link-button:hover{opacity:.8}.link-button:first-child{background-color:#87c93c}.link-button:nth-child(2){background-color:#2196f3}.mobile-wrapper::after,.mobile-wrapper::before{content:"";background:#000;border-radius:999px;left:50%;transform:translateX(-50%);z-index:100;position:absolute}.link-button img{height:20px;margin-right:10px}.link-button:nth-child(2) img{height:15px}.mobile-wrapper{width:310px;height:670px;border-radius:35px;box-shadow:0 0 0 8px #000,0 0 0 10px #4f4f51,0 0 0 11px #8c8f96;z-index:999;position:relative;overflow:hidden;transition:background-color .35s}.mobile-wrapper::before{width:83px;height:24px;top:7px;pointer-events:none}.mobile-wrapper::after{width:110px;height:4px;bottom:4px}.mobile-wrapper iframe{width:120.33694%;border:0;height:745px;transform:scale(.8315);transform-origin:0 0;margin-top:35px}.mobile-wrapper .status-bar{position:absolute;width:260px;margin-left:30px;top:7px}.demo-button{background-color:#008fff;margin-top:20px;display:none}.dark-mode .mobile-wrapper{background-color:#001119}.dark-mode .mobile-wrapper::after{background:#fff}.backdrop .mobile-wrapper{background:rgba(0,0,0,.4);transition:background-color .35s}.dark-mode.backdrop .mobile-wrapper{background:#010a0f;transition:background-color .35s}@media (max-width:925px){.container{flex-direction:column}.buttons,.mobile-wrapper{display:none}.qrcode{margin-left:0}.demo-button{display:block}}
 
-            <twig:mobile_menu
-                    :caller="_self"
-                    type="MOBILE_PAGE_MENU"
-            >
-            </twig:mobile_menu>
-        </div>
+    </style>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="buttons">
+        <a href="https://elmodo.mx/" target="_blank" class="link-button">
+{#          <img src="img/envato.png" alt="">#}
+          <span>Modo</span>
+        </a>
+{#        <a href="#"  class="link-button">#}
+{#          <img src="img/mail.png" alt="">#}
+{#          <span>EZ Admin</span>#}
+{#        </a>#}
+        <a href="{{ path('api_doc') }}" target="_blank" class="link-button">
+          <span>API</span>
+        </a>
+      </div>
 
-        <div class="panel panel-right">
-            <!-- Right panel content should be a page structure -->
-            <div class="view view-init panel-view">
-                <div class="page">
-                    <div class="page-content">
-                        <p><a href="/settings/" class="link">Settings</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="mobile-wrapper">
+{#        <img src="img/status-bar-black.png" alt="" class="status-bar">#}
+        <iframe src="{{ url }}" allow="encrypted-media"></iframe>
+      </div>
 
-        {{ block('main_app') }}
-        <!-- Your main view, should have "view-main" class -->
+      <a href="{{ url }}">
+        <img src="{{ qr_code_url(url) }}" alt="" class="qrcode">
+      </a>
+      <a target="_blank" href="{{ url }}" class="link-button demo-button">
+        Click here to view {{ url }}
+      </a>
     </div>
-{% endblock %}
+{#    <script src="js/app.js"></script>#}
+{#  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"926deff59a272432","version":"2025.1.0","r":1,"token":"aef54997719041eabb1f17376c205816","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>#}
+</body>
+</html>
 
-{% block main_app %}
-    {% set tabs = [
-        'info', 'obras', 'locations'
-    ] %}
-    <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="768" data-url="/">
-        <div class="page page-current">
 
-            <div class="navbar">
-                <div class="navbar-bg"></div>
-                <div class="navbar-inner">
 
-                    <div class="left">
-                        <a class="link icon-only panel-open ripple-inset" data-panel="left">
-                            <twig:ux:icon name="tabler:menu-2" />
-                        </a>
-                    </div>
-
-                    <div class="title">Navbar!</div>
-                </div>
-            </div>
-
-            <div class="toolbar tabbar tabbar-icons toolbar-bottom">
-                <div class="toolbar-inner">
-                    {% for t in tabs %}
-                        <a href="#tab-{{ t }}" class="tab-link {{ loop.first ? 'tab-active' }}">
-                        <span
-                                class="tabbar-label">{{ t|title }}</span></a>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="tabs">
-                {% for t in tabs %}
-                    <div id="tab-{{ t }}" class="page-content tab {{ loop.first ? 'tab-active' }}">
-                        {{ include('tabs/%s.html.twig'|format(t), {t: t}) }}
-                        {#                    {{ include('tabs/obras.html.twig'|format(t), {t: t}) }}#}
-                    </div>
-                {% endfor %}
-            </div><-- tabs -->
-        </div><-- page page-current -->
-    </div> <!-- view-main -->
-{% endblock %}
