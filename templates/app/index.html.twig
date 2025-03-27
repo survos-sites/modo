@@ -29,6 +29,8 @@
         </a>
       </div>
 
+      {% set url = app.request.get('url', url) %}
+
       <div class="mobile-wrapper">
 {#        <img src="img/status-bar-black.png" alt="" class="status-bar">#}
         <iframe src="{{ url }}" allow="encrypted-media"></iframe>
