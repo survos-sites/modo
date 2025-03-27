@@ -23,9 +23,9 @@ return [
     '@symfony/stimulus-bundle' => [
         'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
     ],
-    '@survos-mobile/mobile' => [
-        'path' => './vendor/survos/fw-bundle/assets/src/controllers/mobile_controller.js',
-    ],
+//    '@survos-mobile/mobile' => [
+//        'path' => './vendor/survos/fw-bundle/assets/src/controllers/mobile_controller.js',
+//    ],
     '@hotwired/stimulus' => [
         'version' => '3.2.2',
     ],
