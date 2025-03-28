@@ -1,22 +1,12 @@
 survos_bootstrap:
   #  auth_menu: true
   routes:
-      login: app_login
-      logout: app_logout
-      register: app_register
+#      login: app_login
+#      logout: app_logout
+#      register: app_register
       homepage: app_homepage
   menu_options:
-      owner: null
-      project: null
-      core: null
-  #    core: null
-      category: null
-      categoryField: null
-      catalog: null
-      spreadsheet: null
-      fieldMap: null
-      sheet: null
-      instance: null
+      loc: null
       frontPage: false
       showAppMenu: false
 
@@ -29,6 +19,3 @@ survos_bootstrap:
     theme: tabler
     allow_login: false
     offcanvas: end
-
-
-#survos_velzon:

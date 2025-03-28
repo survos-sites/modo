@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d18618e10c9bcc4fa8a9a84786db480",
+    "content-hash": "2ff40bcbacb915da1491b452ade900a4",
     "packages": [
         {
             "name": "alexandre-fernandez/json-translation-bundle",

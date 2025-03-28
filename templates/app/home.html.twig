@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+{{ parent() }}
+<style>
+    @import url(https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap);.container,body{align-items:center;display:flex}body,html{margin:0;padding:0}body{justify-content:center;background-color:#fff;font-family:Rubik,sans-serif}.qrcode{width:120px;margin-left:100px}.buttons{margin-right:100px}.container{width:100%;height:100vh;min-height:710px;justify-content:center}.link-button{display:flex;align-items:center;color:#fff;padding:10px 18px;border-radius:8px;margin:10px 0;text-decoration:none;transition:.2s;font-size:13px;height:20px}.link-button:hover{opacity:.8}.link-button:first-child{background-color:#87c93c}.link-button:nth-child(2){background-color:#2196f3}.mobile-wrapper::after,.mobile-wrapper::before{content:"";background:#000;border-radius:999px;left:50%;transform:translateX(-50%);z-index:100;position:absolute}.link-button img{height:20px;margin-right:10px}.link-button:nth-child(2) img{height:15px}.mobile-wrapper{width:310px;height:670px;border-radius:35px;box-shadow:0 0 0 8px #000,0 0 0 10px #4f4f51,0 0 0 11px #8c8f96;z-index:999;position:relative;overflow:hidden;transition:background-color .35s}.mobile-wrapper::before{width:83px;height:24px;top:7px;pointer-events:none}.mobile-wrapper::after{width:110px;height:4px;bottom:4px}.mobile-wrapper iframe{width:120.33694%;border:0;height:745px;transform:scale(.8315);transform-origin:0 0;margin-top:35px}.mobile-wrapper .status-bar{position:absolute;width:260px;margin-left:30px;top:7px}.demo-button{background-color:#008fff;margin-top:20px;display:none}.dark-mode .mobile-wrapper{background-color:#001119}.dark-mode .mobile-wrapper::after{background:#fff}.backdrop .mobile-wrapper{background:rgba(0,0,0,.4);transition:background-color .35s}.dark-mode.backdrop .mobile-wrapper{background:#010a0f;transition:background-color .35s}@media (max-width:925px){.container{flex-direction:column}.buttons,.mobile-wrapper{display:none}.qrcode{margin-left:0}.demo-button{display:block}}
+
+</style>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="buttons">
+            <a href="https://elmodo.mx/" target="_blank" class="link-button">
+                {#          <img src="img/envato.png" alt="">#}
+                <span>Modo</span>
+            </a>
+            {#        <a href="#"  class="link-button">#}
+            {#          <img src="img/mail.png" alt="">#}
+            {#          <span>EZ Admin</span>#}
+            {#        </a>#}
+            <a href="{{ path('api_doc') }}" target="_blank" class="link-button">
+                <span>API</span>
+            </a>
+            {% if app.environment == 'dev' %}
+                <a href="{{ path('survos_commands') }}">
+                    Commands
+                </a>
+            {% endif %}
+        </div>
+
+        {% set url = app.request.get('url', url) %}
+
+        <div class="mobile-wrapper">
+            {#        <img src="img/status-bar-black.png" alt="" class="status-bar">#}
+            <iframe src="{{ url }}" allow="encrypted-media"></iframe>
+        </div>
+
+        <a href="{{ url }}">
+            <img src="{{ qr_code_url(url) }}" alt="" class="qrcode">
+            <br />{{ url }}
+        </a>
+        <a target="_blank" href="{{ url }}" class="link-button demo-button">
+            Click here to view {{ url }}
+        </a>
+    </div>
+
+{% endblock %}

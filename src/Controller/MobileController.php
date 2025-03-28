@@ -35,8 +35,8 @@ final class MobileController extends AbstractController
 //        dd("@todo: list of configs");
 //    }
 
-    #[Route('/', name: 'app_index', options: ['expose' => true], methods: ['GET'])]
-    #[Template('app/index.html.twig')]
+    #[Route('/mobile', name: 'app_mobile', options: ['expose' => true], methods: ['GET'])]
+    #[Template('app/home.html.twig')]
     public function mobile(Request $request, string $configCode='modo'): Response|array
     {
         return [];

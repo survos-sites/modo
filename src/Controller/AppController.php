@@ -13,7 +13,7 @@ final class AppController extends AbstractController
     {
 
         return $this->render('app/home.html.twig', [
-            'url' => 'https://fw.wip/es/modo',
+            'url' => 'https://vt.survos.com/es/modo',
         ]);
     }
 }

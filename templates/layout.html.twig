@@ -1,0 +1,34 @@
+{% extends "@SurvosBootstrap/%s/base.html.twig"|format(theme_option('theme')) %}
+{#{% extends "@SurvosBootstrap/sneat/" ~ layout|default('base') ~ ".html.twig" %}#}
+{#{% extends "@SurvosBootstrap/tabler/layout-" ~ layout|default('vertical') ~ ".html.twig" %}#}
+
+    {% block stylesheets %}
+        {#        <link rel="stylesheet" href="https://kit.fontawesome.com/821a06d4ef.css" crossorigin="anonymous">#}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/survosapigrid/style.css') }}" ></link>
+{#        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/survosbootstrap/bootstrap/style.css') }}">#}
+
+        {{ parent() }}
+    {% endblock %}
+
+
+{% block description "KPA: Kid Pan Alley Archive" %}
+
+
+{% set appShortName = 'KPA' %}
+
+
+{% block logo_mini %}<b>KPA</b>{% endblock %}
+{% block logo_large '<b>KPA</b> Admin' %}
+
+{% block page_title 'KPA Admin' %}
+{% block page_subtitle 'Songs and Music!' %}
+
+{#    {% block stylesheets %}#}
+{#        {{ parent() }}#}
+{#    {% endblock %}#}
+
+    {% block javascripts %}
+        {{ importmap('app') }}
+        {{ parent() }}
+    {% endblock %}
+
