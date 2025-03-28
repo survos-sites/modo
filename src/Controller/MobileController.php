@@ -4,8 +4,7 @@ namespace App\Controller;
 
 use App\Repository\LocRepository;
 use Knp\Menu\FactoryInterface;
-use Survos\FwBundle\Event\KnpMenuEvent;
-use Survos\FwBundle\Service\FwService;
+use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,8 +16,6 @@ final class MobileController extends AbstractController
 {
     public function __construct(
         private EventDispatcherInterface $eventDispatcher,
-        protected ?FactoryInterface $factory=null,
-        private ?FwService $fwService,
     )
     {
 
@@ -39,8 +36,10 @@ final class MobileController extends AbstractController
 //    }
 
     #[Route('/', name: 'app_index', options: ['expose' => true], methods: ['GET'])]
-    public function mobile(Request $request, string $configCode='modo'): Response
+    #[Template('app/index.html.twig')]
+    public function mobile(Request $request, string $configCode='modo'): Response|array
     {
+        return [];
 
         $templates = [];
         // iterate through the page and tab routes to create templates, which will be rendered in the main page.

@@ -4,6 +4,7 @@ If there were a simple way to define time, we might say it is a volatile concept
 understood from the perspective of where one stands. Time holds different
 meanings and flows differently for each of us. Thus, we know that time is
 relative.
+
 For those of us who inhabit a “normal” space, we align time with our daily
 activities and schedules—work, study, or leisure. But what happens to those
 whose lives are confined to a space where time is not only managed but
@@ -196,6 +197,14 @@ This project demands space. Here, we can observe its progress and the
 discussions that have emerged from a game that, ultimately, holds deep
 symbolism and provides the necessary coordinates to understand the needs
 of the women of Tepepan.
+
+# Seres extraplanetarios
+
+@missing
+
+# Cartografías lúdicas
+
+@missing
 
 
 # Juan

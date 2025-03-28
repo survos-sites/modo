@@ -12,7 +12,7 @@ final class AppController extends AbstractController
     public function index(): Response
     {
 
-        return $this->render('app/index.html.twig', [
+        return $this->render('app/home.html.twig', [
             'url' => 'https://fw.wip/es/modo',
         ]);
     }

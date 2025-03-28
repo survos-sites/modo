@@ -27,6 +27,11 @@
         <a href="{{ path('api_doc') }}" target="_blank" class="link-button">
           <span>API</span>
         </a>
+        {% if app.environment == 'dev' %}
+        <a href="{{ path('survos_commands') }}">
+          Commands
+        </a>
+        {% endif %}
       </div>
 
       {% set url = app.request.get('url', url) %}

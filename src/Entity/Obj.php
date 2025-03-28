@@ -43,6 +43,10 @@ class Obj implements \Stringable, RouteParametersInterface
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $info = null;
 
+    #[ORM\ManyToOne(inversedBy: 'objs')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Loc $location = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -109,6 +113,18 @@ class Obj implements \Stringable, RouteParametersInterface
     public function setInfo(?string $info): static
     {
         $this->info = $info;
+
+        return $this;
+    }
+
+    public function getLocation(): ?Loc
+    {
+        return $this->location;
+    }
+
+    public function setLocation(?Loc $location): static
+    {
+        $this->location = $location;
 
         return $this;
     }

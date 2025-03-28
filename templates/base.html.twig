@@ -1,6 +1,14 @@
-{% extends "@SurvosFw/fw-base.html.twig" %}
-        {% block stylesheets %}
-            {{ parent() }}
+{% extends "@SurvosBootstrap/%s/base.html.twig"|format(theme_option('theme')) %}
+{#{% extends "@SurvosBootstrap/sneat/" ~ layout|default('base') ~ ".html.twig" %}#}
+{#{% extends "@SurvosBootstrap/tabler/layout-" ~ layout|default('vertical') ~ ".html.twig" %}#}
 
-        {% endblock %}
+    {% block stylesheets %}
+        {#        <link rel="stylesheet" href="https://kit.fontawesome.com/821a06d4ef.css" crossorigin="anonymous">#}
+        {#        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/survosapigrid/style.css') }}" ></link>#}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/survosbootstrap/bootstrap/style.css') }}">
 
+        {{ parent() }}
+
+        {#        <link rel="manifest" href="/site.webmanifest">#}
+
+    {% endblock %}

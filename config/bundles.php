@@ -26,4 +26,9 @@ return [
     Inspector\Symfony\Bundle\InspectorBundle::class => ['all' => true],
     Endroid\QrCodeBundle\EndroidQrCodeBundle::class => ['all' => true],
     Knp\DictionaryBundle\KnpDictionaryBundle::class => ['all' => true],
+    Survos\CommandBundle\SurvosCommandBundle::class => ['all' => true],
+    Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
+    Survos\BootstrapBundle\SurvosBootstrapBundle::class => ['all' => true],
+    AlexandreFernandez\KeyValueFormBundle\KeyValueFormBundle::class => ['all' => true],
+    AlexandreFernandez\JsonTranslationBundle\JsonTranslationBundle::class => ['all' => true],
 ];

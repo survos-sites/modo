@@ -23,9 +23,6 @@ return [
     '@symfony/stimulus-bundle' => [
         'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
     ],
-//    '@survos-mobile/mobile' => [
-//        'path' => './vendor/survos/fw-bundle/assets/src/controllers/mobile_controller.js',
-//    ],
     '@hotwired/stimulus' => [
         'version' => '3.2.2',
     ],
@@ -102,5 +99,18 @@ return [
     ],
     '@hotwired/turbo' => [
         'version' => '7.3.0',
+    ],
+    '@tabler/core' => [
+        'version' => '1.1.1',
+    ],
+    'autosize' => [
+        'version' => '6.0.1',
+    ],
+    'imask' => [
+        'version' => '7.6.1',
+    ],
+    '@tabler/core/dist/css/tabler.min.css' => [
+        'version' => '1.1.1',
+        'type' => 'css',
     ],
 ];

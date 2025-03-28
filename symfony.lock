@@ -1,4 +1,10 @@
 {
+    "alexandre-fernandez/json-translation-bundle": {
+        "version": "1.0.5"
+    },
+    "alexandre-fernandez/key-value-form-bundle": {
+        "version": "1.1.4"
+    },
     "api-platform/symfony": {
         "version": "4.1",
         "recipe": {
@@ -91,6 +97,9 @@
             "config/packages/inspector.yaml"
         ]
     },
+    "knplabs/knp-menu-bundle": {
+        "version": "v3.5.0"
+    },
     "nelmio/cors-bundle": {
         "version": "2.5",
         "recipe": {
@@ -115,6 +124,22 @@
             ".env.test",
             "phpunit.xml.dist",
             "tests/bootstrap.php"
+        ]
+    },
+    "survos/bootstrap-bundle": {
+        "version": "1.5.529"
+    },
+    "survos/command-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.5",
+            "ref": "2ae59ea83b8aeb1c288a149af0f594ee9ff52524"
+        },
+        "files": [
+            "config/packages/survos_command.yaml",
+            "config/routes/survos_command.yaml"
         ]
     },
     "survos/core-bundle": {

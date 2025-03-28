@@ -26,20 +26,6 @@ class AppFixtures extends Fixture
 
         $header = $csv->getHeader(); //returns the CSV header record
 
-//returns all the records as
-        $records = $csv->getRecords(); // an Iterator object containing arrays
-//        $records = $csv->getRecordsAsObject(MyDTO::class); //an Iterator object containing MyDTO objects
-        foreach ($records as $idx => $record) {
-            $obj = new Obj()
-                ->setLocale($idx % 2 ? 'es' : 'en')
-                ->setCode($record["ID Inventario1"])
-                ->setLabel($record["Nombre"])
-                ->setInfo($record["Ficha"])
-                ->setDescription($record["Descripción Formal"])
-            ;
-            $manager->persist($obj);
-        }
-
         foreach (['en', 'es'] as $locale) {
             $fn = "data/modo.$locale.md";
             assert(file_exists($fn));
@@ -54,19 +40,40 @@ class AppFixtures extends Fixture
                 $description = trim(join("\n", $lines));
                 $data[$idx][$locale] = [
                     'title' => $title,
-                    'description' => substr($description, 0, 40),
+                    'description' => $description, // substr($description, 0, 40),
                 ];
-                $loc = new Loc()
-                    ->setLocale($locale)
-                    ->setLabel($title)
-                    ->setDescription($description);
-                $manager->persist($loc);
-                $this->logger->info("Loading data from {$title}", $data[$idx][$locale]);
             }
+        }
+        foreach ($data as $idx => $record) {
+            $loc = new Loc($idx);
+            $manager->persist($loc);
+            foreach ($record as $locale => $values) {
+//                $loc->setLabel($record['es']['title']);
+//                $loc->setDescription($record['es']['description']);
+                $loc->setLocale('es'); // original locale
+                $loc
+                    ->getTitle()[$locale] = $values['title'];
+                $loc
+                    ->getContent()[$locale] = $values['description'];
 
-
+            }
+            $locations[] = $loc;
         }
 
+        //returns all the records as
+        $records = $csv->getRecords(); // an Iterator object containing arrays
+//        $records = $csv->getRecordsAsObject(MyDTO::class); //an Iterator object containing MyDTO objects
+        foreach ($records as $idx => $record) {
+            $loc = $locations[array_rand($locations)];
+            $obj = new Obj()
+                ->setLocale($idx % 2 ? 'es' : 'en')
+                ->setCode($record["ID Inventario1"])
+                ->setLabel($record["Nombre"])
+                ->setInfo($record["Ficha"])
+                ->setDescription($record["Descripción Formal"]);
+            $loc->addObj($obj);
+            $manager->persist($obj);
+        }
 
 
         $manager->flush();
