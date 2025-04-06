@@ -4,11 +4,11 @@
     {% block main %}
         {% for expo in expos %}
             <li>
-                <a href="{{ path('admin_expo_edit', {entityId: expo.id}) }}">
+                <a href="{{ path('admin_expo_edit', {entityId: expo.code}) }}">
                     <twig:ux:icon name="mdi:pencil" />
                 </a>
 
-                <a href="{{ path('admin_expo_detail', {entityId: expo.id}) }}">
+                <a href="{{ path('admin_expo_detail', {entityId: expo.code}) }}">
                     <twig:ux:icon name="mdi:show" />
                     {{ expo.title }}
                 </a>

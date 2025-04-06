@@ -37,6 +37,10 @@ class ExpoCrudController extends AbstractCrudController
             ->addTranslatableField(
                 TextField::new('title') /// ->setRequired(true)->setColumns(6)
             )
+            ->addTranslatableField(
+                TextareaField::new('content') /// ->setRequired(true)->setColumns(6)
+//                 CodeEditorField::new('content')->setLanguage('markdown')
+            )
 //            ->addTranslatableField(
 //                TextareaField::new('content')->setRequired(true)->setColumns(6),
 //                TextEditorField::new('body')->setRequired(true)->setColumns(6),

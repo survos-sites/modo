@@ -47,8 +47,7 @@ class AppFixtures extends Fixture
         }
         foreach ($data as $idx => $record) {
             // using DoctrineBehaviors
-            $expo = new Expo()
-                ->setCode('expo' . $idx);
+            $expo = new Expo('expo' . $idx);
             $manager->persist($expo);
             foreach ($record as $locale => $values) {
                 $expo->translate($locale)->setTitle($values['title']);
