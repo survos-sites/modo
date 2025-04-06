@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 //#[AdminDashboard(routePath: '/admin', routeName: 'admin')]
-#[AdminDashboard('/ez')]
+#[AdminDashboard('/{_locale}/')]
 class DashboardController extends AbstractDashboardController
 {
 
@@ -71,8 +71,8 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-
-        ->setTitle('Modo');
+            ->setLocales($this->enabledLocales)
+            ->setTitle('Modo');
     }
 
     public function configureCrud(): Crud

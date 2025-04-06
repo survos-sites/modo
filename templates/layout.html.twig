@@ -11,24 +11,24 @@
     {% endblock %}
 
 
-{% block description "KPA: Kid Pan Alley Archive" %}
+{% block description "El MODO, Mexico" %}
 
 
-{% set appShortName = 'KPA' %}
+{% set appShortName = 'modo' %}
 
 
-{% block logo_mini %}<b>KPA</b>{% endblock %}
-{% block logo_large '<b>KPA</b> Admin' %}
+{#{% block logo_mini %}<b>KPA</b>{% endblock %}#}
+{#{% block logo_large '<b>KPA</b> Admin' %}#}
 
-{% block page_title 'KPA Admin' %}
-{% block page_subtitle 'Songs and Music!' %}
+{#{% block page_title 'KPA Admin' %}#}
+{#{% block page_subtitle 'Songs and Music!' %}#}
 
 {#    {% block stylesheets %}#}
 {#        {{ parent() }}#}
 {#    {% endblock %}#}
 
     {% block javascripts %}
-        {{ importmap('app') }}
         {{ parent() }}
+        {{ importmap('app') }}
     {% endblock %}
 
