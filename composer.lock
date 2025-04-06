@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66f0ed86a726b170f6ff31b76ae80121",
+    "content-hash": "cde6550664dc480ff8fbb9269e1b9f2e",
     "packages": [
         {
             "name": "a2lix/auto-form-bundle",
@@ -6390,12 +6390,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/survos/translatable-field-bundle.git",
-                "reference": "a90c7e626869dffd1da7953502f2310a61189e83"
+                "reference": "99bf0673a3f59c8539c9b36f0eee4433b22e5f8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/survos/translatable-field-bundle/zipball/a90c7e626869dffd1da7953502f2310a61189e83",
-                "reference": "a90c7e626869dffd1da7953502f2310a61189e83",
+                "url": "https://api.github.com/repos/survos/translatable-field-bundle/zipball/99bf0673a3f59c8539c9b36f0eee4433b22e5f8c",
+                "reference": "99bf0673a3f59c8539c9b36f0eee4433b22e5f8c",
                 "shasum": ""
             },
             "require": {
@@ -6441,7 +6441,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-04-06T11:28:28+00:00"
+            "time": "2025-04-06T14:12:30+00:00"
         },
         {
             "name": "symfony/asset",
