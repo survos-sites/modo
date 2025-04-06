@@ -13,7 +13,8 @@
                     {{ expo.title }}
                 </a>
                 {# @todo: configure this to the expo detail in voxitour #}
-                {% set url = voxitour_base ~ '/%s/%s#expo-'|format(app.locale, 'modo') ~ expo.code %}
+                {# https://fw.wip/es/modo?expoId=expo1#tab-expos #}
+                {% set url = voxitour_base ~ '/en/modo/' ~ '?expoId=' ~ expo.code ~ '#tab-expos' %}
                 <a target="_blank" href="{{ url }}">
                     Voxitour {{ url }}
                 </a>
