@@ -1,1 +1,1 @@
-export default ({"base_url":"","routes":{"app_index":{"tokens":[["text","\/"]],"defaults":[],"requirements":{"_locale":"en|es"},"hosttokens":[],"methods":["GET"],"schemes":[]}},"prefix":"","host":"localhost","port":"","scheme":"http","locale":""});
+export default ({"base_url":"","routes":{"app_mobile":{"tokens":[["text","\/mobile"]],"defaults":[],"requirements":{"_locale":"en|es"},"hosttokens":[],"methods":["GET"],"schemes":[]}},"prefix":"","host":"localhost","port":"","scheme":"http","locale":""});

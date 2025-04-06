@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Expo;
 use App\Entity\Loc;
 use App\Entity\Obj;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -45,6 +46,18 @@ class AppFixtures extends Fixture
             }
         }
         foreach ($data as $idx => $record) {
+            // using DoctrineBehaviors
+            $expo = new Expo()
+                ->setCode('expo' . $idx);
+            $manager->persist($expo);
+            foreach ($record as $locale => $values) {
+                $expo->translate($locale)->setTitle($values['title']);
+                $expo->translate($locale)->setContent($values['description']);
+                $expo->mergeNewTranslations();
+            }
+
+
+            // using JsonTranslate
             $loc = new Loc($idx);
             $manager->persist($loc);
             foreach ($record as $locale => $values) {
@@ -66,7 +79,7 @@ class AppFixtures extends Fixture
         foreach ($records as $idx => $record) {
             $loc = $locations[array_rand($locations)];
             $obj = new Obj()
-                ->setLocale($idx % 2 ? 'es' : 'en')
+                ->setLocale('es')
                 ->setCode($record["ID Inventario1"])
                 ->setLabel($record["Nombre"])
                 ->setInfo($record["Ficha"])
