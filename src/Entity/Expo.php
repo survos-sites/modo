@@ -38,8 +38,7 @@ class Expo implements TranslatableInterface
 
     public function getTitle(): string
     {
-        return $this->translate()
-            ->getTitle();
+        return $this->translate()->getTitle();
     }
 
 }

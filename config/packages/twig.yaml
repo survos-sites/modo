@@ -3,6 +3,7 @@ twig:
     globals:
         app_name: 'El MODO'
         app_logo: '/logo.webp'
+        voxitour_base: '%env(VOXITOUR_BASE)%'
 
 when@test:
     twig:

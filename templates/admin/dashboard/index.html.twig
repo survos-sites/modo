@@ -1,0 +1,24 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+    {% block content_title 'MODO' %}
+    {% block main %}
+        {% for expo in expos %}
+            <li>
+                <a href="{{ path('admin_expo_edit', {entityId: expo.id}) }}">
+                    <twig:ux:icon name="mdi:pencil" />
+                </a>
+
+                <a href="{{ path('admin_expo_detail', {entityId: expo.id}) }}">
+                    <twig:ux:icon name="mdi:show" />
+                    {{ expo.title }}
+                </a>
+                {# @todo: configure this to the expo detail in voxitour #}
+                {% set url = voxitour_base ~ '/%s/%s#expo-'|format(app.locale, 'modo') ~ expo.code %}
+                <a target="_blank" href="{{ url }}">
+                    Voxitour {{ url }}
+                </a>
+
+            </li>
+        {% endfor %}
+        {{ _self }}
+{% endblock %}
