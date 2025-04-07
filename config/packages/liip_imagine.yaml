@@ -2,3 +2,4 @@
 liip_imagine:
     # valid drivers options include "gd" or "gmagick" or "imagick"
     driver: "gd"
+    data_loader: easy_media_data_loader
