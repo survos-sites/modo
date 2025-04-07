@@ -2,24 +2,44 @@
 
     {% block content_title 'MODO' %}
     {% block main %}
+        <div class="row">
+
         {% for expo in expos %}
-            <li>
+            <div class="col-md-2">
                 <a href="{{ path('admin_expo_edit', {entityId: expo.code}) }}">
                     <twig:ux:icon name="mdi:pencil" />
                 </a>
-
                 <a href="{{ path('admin_expo_detail', {entityId: expo.code}) }}">
                     <twig:ux:icon name="mdi:show" />
-                    {{ expo.title }}
                 </a>
+            </div>
+
+
                 {# @todo: configure this to the expo detail in voxitour #}
                 {# https://fw.wip/es/modo?expoId=expo1#tab-expos #}
-                {% set url = voxitour_base ~ '/en/modo/' ~ '?expoId=' ~ expo.code ~ '#tab-expos' %}
-                <a target="_blank" href="{{ url }}">
-                    Voxitour {{ url }}
-                </a>
+                {% for l in app.enabled_locales %}
+                    <div class="col-md-5">
 
-            </li>
+                    {% set url = voxitour_base ~ '/%s/modo/?expoId=%s#tab-expos'|format(app.locale, expo.code) %}
+                    <figure class="figure">
+                    <a target="_blank" href="{{ url }}">
+                        <img class="figure-img img-fluid" src="{{ qr_code_url(url) }}" style="max-width: 150px" />
+                    </a>
+                        <figcaption class="figure-caption text-end">
+                            <b class="h-3">
+                                <a href="{{ path('admin_expo_detail', {entityId: expo.code}) }}">
+                                    {{ expo.translate(l).title }}
+                                </a>
+
+                            </b>
+                            -
+                            {{ l|language_name(l) }}
+                        </figcaption>
+
+
+                    </figure>
+                    </div>
+                {% endfor %}
         {% endfor %}
-        {{ _self }}
+        </div>
 {% endblock %}

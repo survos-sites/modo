@@ -32,6 +32,7 @@ class ExpoCrudController extends AbstractCrudController
 //        ]);
         // these are the _translated_ values, virtual field, so hide on the form
         yield TextField::new('title')->hideOnForm();
+        yield TextField::new('content')->hideOnForm();
 
         yield TranslationsField::new('translations')
             ->addTranslatableField(
