@@ -12,6 +12,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Survos\TranslatableFieldBundle\EasyAdmin\Field\TranslationsField;
 use Survos\TranslatableFieldBundle\EasyAdmin\Field\TranslationsSimpleField;
+use function Symfony\Component\Translation\t;
 
 class ExpoCrudController extends AbstractCrudController
 {
@@ -23,7 +24,7 @@ class ExpoCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
 //        yield IdField::new('id');
-        yield TextField::new('code');
+        yield TextField::new('code', t('code'));
 //        yield TranslationsSimpleField::new('translations', '@translations', [
 //            'title' => [
 //                'field_type' => TextType::class,

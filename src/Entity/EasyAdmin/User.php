@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\HasLifecycleCallbacks]
 class User extends BaseUser
 {
-    #[ORM\Column(length: 48)]
+    #[ORM\Column(length: 48, nullable: true)]
     private ?string $code = null;
 
     #[ORM\Column(length: 255, nullable: true)]
