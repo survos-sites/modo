@@ -2,7 +2,7 @@
 
 namespace App\Factory;
 
-use App\Entity\User;
+use App\Entity\EasyAdmin\User;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Zenstruck\Foundry\Persistence\PersistentProxyObjectFactory;
 
