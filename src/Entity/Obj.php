@@ -44,7 +44,7 @@ class Obj implements \Stringable, RouteParametersInterface
     private ?string $info = null;
 
     #[ORM\ManyToOne(inversedBy: 'objs')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Loc $location = null;
 
     #[ORM\Column(type: 'easy_media_type', nullable: true)]
