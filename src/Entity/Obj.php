@@ -47,7 +47,7 @@ class Obj implements \Stringable, RouteParametersInterface
     #[ORM\JoinColumn(nullable: true)]
     private ?Loc $location = null;
 
-    #[ORM\Column(type: 'easy_media_type', nullable: true)]
+//    #[ORM\Column(type: 'easy_media_type', nullable: true)]
     private Media|string|null $file;
 
     public function getId(): ?int
