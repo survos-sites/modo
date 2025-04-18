@@ -1,9 +1,0 @@
-# config/routes/easy_media.yaml
-
-easy_media:
-  resource: '@EasyMediaBundle/Resources/config/routes.xml'
-  prefix: /admin
-
-easy_media_public:
-  resource: '@EasyMediaBundle/Resources/config/public_routes.xml'
-  prefix: /

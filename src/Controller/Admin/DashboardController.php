@@ -21,7 +21,7 @@ use Symfony\Component\Routing\Attribute\Route;
 #[AdminDashboard('/{_locale}/')]
 class DashboardController extends AbstractDashboardController
 {
-    use EasyAdminUserTrait;
+//    use EasyAdminUserTrait;
 
     public function __construct(
         private AdminUrlGenerator                             $adminUrlGenerator,
@@ -92,6 +92,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Expo', 'fas fa-list', Expo::class);
         yield MenuItem::linkToCrud('Obj', 'fas fa-list', Obj::class);
         yield MenuItem::linkToRoute('Medias', 'fa fa-picture-o', 'media.index');
-        yield from $this->administratorMenuEntry();
+//        yield from $this->administratorMenuEntry();
     }
 }
