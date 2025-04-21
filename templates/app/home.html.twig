@@ -202,6 +202,12 @@
             <iframe src="{{ url }}" allow="encrypted-media"></iframe>
         </div>
 
+        {% for url in ['https://vt.survos.com/es/cmas'] %}
+            <a href="{{ path('app_homepage', {url: url}) }}" class="qrcode">
+                <span>{{ url }}</span>
+            </a>
+        {% endfor %}
+
         <a href="{{ url }}">
             <img src="{{ qr_code_url(url) }}" alt="" class="qrcode">
             <br/>{{ url }}
