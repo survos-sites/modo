@@ -44,4 +44,6 @@ return [
     SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle::class => ['all' => true],
     Adeliom\EasyCommonBundle\EasyCommonBundle::class => ['all' => true],
     Adeliom\EasyAdminUserBundle\EasyAdminUserBundle::class => ['all' => true],
+    Survos\DocBundle\SurvosDocBundle::class => ['all' => true],
+    Jawira\DoctrineDiagramBundle\DoctrineDiagramBundle::class => ['dev' => true, 'test' => true],
 ];
