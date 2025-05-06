@@ -30,7 +30,6 @@ return [
     Survos\BootstrapBundle\SurvosBootstrapBundle::class => ['all' => true],
     AlexandreFernandez\KeyValueFormBundle\KeyValueFormBundle::class => ['all' => true],
     AlexandreFernandez\JsonTranslationBundle\JsonTranslationBundle::class => ['all' => true],
-    Knp\DoctrineBehaviors\DoctrineBehaviorsBundle::class => ['all' => true],
     EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle::class => ['all' => true],
     A2lix\AutoFormBundle\A2lixAutoFormBundle::class => ['all' => true],
     A2lix\TranslationFormBundle\A2lixTranslationFormBundle::class => ['all' => true],

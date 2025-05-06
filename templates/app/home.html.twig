@@ -1,5 +1,7 @@
 {% extends "base.html.twig" %}
 
+{#see https://github.com/DevExpress/device-specs/blob/master/viewport-sizes.json for a list of mobile device sizes #}
+{#These styles come from https://preview.themeforest.net/item/yui-news-magazine-mobile-template/full_screen_preview/22407164#}
 {% block stylesheets %}
     {{ parent() }}
     <style>
@@ -195,16 +197,16 @@
             {% endif %}
         </div>
 
-        {% set url = app.request.get('url', url) %}
+        {% set url = app.request.get('url', url|default('#')) %}
 
         <div class="mobile-wrapper">
             {#        <img src="img/status-bar-black.png" alt="" class="status-bar"> #}
             <iframe src="{{ url }}" allow="encrypted-media"></iframe>
         </div>
 
-        {% for url in ['https://vt.survos.com/es/cmas'] %}
-            <a href="{{ path('app_homepage', {url: url}) }}" class="qrcode">
-                <span>{{ url }}</span>
+        {% for option in ['https://vt.survos.com/es/cmas'] %}
+            <a href="{{ path('app_homepage', {url: option}) }}" class="qrcode">
+                <span>{{ option }}</span>
             </a>
         {% endfor %}
 

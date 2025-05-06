@@ -142,8 +142,17 @@
             "config/packages/inspector.yaml"
         ]
     },
-    "knplabs/doctrine-behaviors": {
-        "version": "dev-sf7.0"
+    "jawira/doctrine-diagram-bundle": {
+        "version": "0.8",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "0.7",
+            "ref": "1c062f7d4e61eb3e7372c45d96d33358cccac15a"
+        },
+        "files": [
+            "config/packages/doctrine_diagram.yaml"
+        ]
     },
     "knplabs/knp-menu-bundle": {
         "version": "v3.5.0"
@@ -238,6 +247,9 @@
     },
     "survos/deployment-bundle": {
         "version": "1.5.529"
+    },
+    "survos/doc-bundle": {
+        "version": "dev-main"
     },
     "survos/js-twig-bundle": {
         "version": "1.5.529"
@@ -543,8 +555,20 @@
     "tacman/dictionary-bundle": {
         "version": "4.0.9"
     },
+    "tacman/doctrine-behaviors": {
+        "version": "dev-sf7.0"
+    },
     "twig/extra-bundle": {
         "version": "v3.20.0"
+    },
+    "zenstruck/browser": {
+        "version": "1.9",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.9",
+            "ref": "66c5290398734ff02cedddf44dce6eb2002d958c"
+        }
     },
     "zenstruck/foundry": {
         "version": "2.3",

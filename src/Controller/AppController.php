@@ -19,7 +19,6 @@ final class AppController extends AbstractController
     #[Route('/', name: 'app_homepage')]
     public function index(): Response
     {
-
         return $this->render('app/home.html.twig', [
             'url' => 'https://vt.survos.com/es/modo',
         ]);

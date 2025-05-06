@@ -43,8 +43,10 @@ final class AppMenu implements KnpMenuHelperInterface
     {
         $menu = $event->getMenu();
         $options = $event->getOptions();
-        $this->add($menu, 'app_mobile');
-        $this->add($menu, 'admin');
+//        $this->add($menu, 'app_mobile');
+        if ($this->isGranted('ROLE_ADMIN')) {
+            $this->add($menu, 'admin');
+        }
 
         //        $this->add($menu, 'app_homepage');
         // for nested menus, don't add a route, just a label, then use it for the argument to addMenuItem
