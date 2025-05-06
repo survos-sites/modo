@@ -1,0 +1,64 @@
+{
+    "|https://modo.wip/": {
+        "/": {
+            "path": "/",
+            "seen": true,
+            "depth": 0,
+            "linkStatus": null,
+            "username": null,
+            "route": "app_homepage",
+            "rp": null,
+            "statusCode": 200,
+            "foundOn": null,
+            "memory": null
+        },
+        "/admin": {
+            "path": "/admin",
+            "seen": true,
+            "depth": 1,
+            "linkStatus": null,
+            "username": null,
+            "route": "admin",
+            "rp": null,
+            "statusCode": 200,
+            "foundOn": "/",
+            "memory": null
+        },
+        "/api/es/docs": {
+            "path": "/api/es/docs",
+            "seen": true,
+            "depth": 1,
+            "linkStatus": null,
+            "username": null,
+            "route": "api_doc",
+            "rp": null,
+            "statusCode": 200,
+            "foundOn": "/",
+            "memory": null
+        },
+        "/?url=https://vt.survos.com/es/cmas": {
+            "path": "/?url=https://vt.survos.com/es/cmas",
+            "seen": true,
+            "depth": 1,
+            "linkStatus": null,
+            "username": null,
+            "route": "app_homepage",
+            "rp": null,
+            "statusCode": 200,
+            "foundOn": "/",
+            "memory": null
+        },
+        "/admin/reset-password": {
+            "path": "/admin/reset-password",
+            "seen": true,
+            "depth": 2,
+            "linkStatus": null,
+            "username": null,
+            "route": "easy_admin_forgot_password_request",
+            "rp": null,
+            "statusCode": 200,
+            "foundOn": "/admin",
+            "memory": null
+        }
+    }
+}
