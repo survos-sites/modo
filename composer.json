@@ -71,7 +71,6 @@
         "symfony/web-link": "^7.2",
         "symfony/yaml": "^7.2.5",
         "symfonycasts/verify-email-bundle": "^1.17.3",
-        "tacman/dictionary-bundle": "^4.0.9",
         "twig/extra-bundle": "^3.21",
         "twig/intl-extra": "^3.21",
         "twig/markdown-extra": "^3.21",

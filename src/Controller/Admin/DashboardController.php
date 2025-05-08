@@ -7,6 +7,7 @@ use App\Entity\Expo;
 use App\Entity\Obj;
 use App\Repository\ExpoRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -85,12 +86,19 @@ class DashboardController extends AbstractDashboardController
         return $crud;
     }
 
+    public function configureAssets(): Assets
+    {
+        return Assets::new()
+            ->useCustomIconSet()
+            ;
+    }
+
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Expo', 'fas fa-list', Expo::class);
-        yield MenuItem::linkToCrud('Obj', 'fas fa-list', Obj::class);
+        yield MenuItem::linkToDashboard('Dashboard', 'home');
+        yield MenuItem::linkToCrud('Expo', Expo::class, Expo::class);
+        yield MenuItem::linkToCrud('Obj', Obj::class, Obj::class);
 //        yield MenuItem::linkToRoute('Medias', 'fa fa-picture-o', 'media.index');
 //        yield from $this->administratorMenuEntry();
     }

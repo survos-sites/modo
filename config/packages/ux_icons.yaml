@@ -1,5 +1,9 @@
 # config/packages/ux_icons.yaml
 ux_icons:
+  aliases:
+    home: tabler:home
+    App\Entity\Obj: game-icons:porcelain-vase
+    App\Entity\Expo: nrk:gallery
   default_icon_attributes:
     width: 30px
       # Default:

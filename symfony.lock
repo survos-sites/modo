@@ -552,9 +552,6 @@
     "symfonycasts/verify-email-bundle": {
         "version": "v1.17.3"
     },
-    "tacman/dictionary-bundle": {
-        "version": "4.0.9"
-    },
     "tacman/doctrine-behaviors": {
         "version": "dev-sf7.0"
     },
