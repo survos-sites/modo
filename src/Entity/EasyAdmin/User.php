@@ -13,4 +13,5 @@ use Doctrine\ORM\Mapping as ORM;
 class User extends BaseUser
 {
     public string $code;
+    public bool $isArtist = false;
 }
